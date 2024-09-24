@@ -1,0 +1,28 @@
+La base de datos contiene columnas además del ID de los clientes y el churn:
+
+Cliente:
+género: género (masculino y femenino)
+anciano: información sobre si un cliente tiene o no una edad igual o mayor a 65 años
+pareja: si el cliente tiene o no una pareja
+dependientes: si el cliente tiene o no dependientes
+tiempo_servicio: meses de contrato del cliente
+
+Servicio de telefonía:
+servicio_telefono: suscripción al servicio telefónico
+varias_lineas: suscripción a más de una línea telefónica
+
+Servicio de internet:
+servicio_internet: suscripción a un proveedor de internet
+seguridad_online: suscripción adicional a seguridad en línea
+backup_online: suscripción adicional a copias de seguridad en línea
+proteccion_dispositivo: suscripción adicional a protección en el dispositivo
+soporte_tecnico: suscripción adicional a soporte técnico, menos tiempo de espera
+tv_streaming: suscripción a TV por cable
+peliculas_streaming: suscripción a streaming de películas
+
+Cuenta:
+contrato: tipo de contrato
+factura_electronica: si el cliente prefiere recibir la factura en línea
+metodo_pago: forma de pago
+cobros_mensuales: total de todos los servicios del cliente por mes
+cobros_totales: total gastado por el cliente
