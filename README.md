@@ -16,6 +16,7 @@ Una empresa de telecomunicaciones desea mejorar la retención de sus clientes, i
 ![image](https://github.com/user-attachments/assets/d087b1f3-d35f-4fd7-929f-c6668df4f4ff)
 
 * Obteniendo una nueva distribución en la variable objetivo.
+  
 ![image](https://github.com/user-attachments/assets/9d00d3ef-601e-4879-a7e0-44f72f3ec478)
 
 * El análisis de nulos fue un punto importante a tener en cuenta en el proyecto. Se realizaron visualizaciones con la finalidad de obtener mejores resultados.
