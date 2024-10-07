@@ -95,6 +95,26 @@ Después de eliminar las variables correlacionadas nos queda de esta manera. Si 
 
 ![image](https://github.com/user-attachments/assets/22eab390-45e6-49c6-a972-3d4ef6ba8529)
 
+### 4.1 CONCLUSIONES
+
+1. <ins>**Mejores Métricas para Data No Balanceada:**</ins> Se observó que las técnicas aplicadas dieron mejores resultados en la data sin balancear. Sin embargo, es importante considerar que en escenarios reales, donde el desbalanceo de clases puede influir en el sesgo del modelo, sería conveniente realizar pruebas adicionales con técnicas de balanceo de datos (como SMOTE o subsampling) para evaluar si se obtienen mejoras adicionales en las métricas, particularmente en datasets de menor tamaño.
+
+2. <ins>**RFE**</ins>: Un Caso de Estudio para Compromisos: Si bien RFE presenta los mejores resultados en términos de accuracy (0.8101) y F1-Score (0.8012), su mayor costo en tiempo de entrenamiento (10.0477 segundos) lo convierte en una opción menos ideal para aplicaciones en tiempo real o con datasets más grandes. Esto indica que, aunque el rendimiento es superior, la escalabilidad de esta técnica debe evaluarse antes de su uso en producción.
+
+3. <ins>**Análisis Manual:</ins>** Heatmap y Gráficos: A pesar de los tiempos de entrenamiento reducidos que ofrecen Heatmap y Gráficos, su dependencia de análisis manual puede limitar su aplicabilidad en entornos automatizados. Además, aunque el número de características es alto en ambos casos, los resultados métricos son aceptables, lo que sugiere que pueden ser opciones útiles en entornos donde el análisis rápido sea más importante que la precisión máxima.
+
+4. <ins>**SelectKBest:**</ins> Balance Entre Métricas y Tiempo: SelectKBest parece ser una técnica intermedia, con un equilibrio razonable entre el número de características seleccionadas y los tiempos de entrenamiento. Su eficiencia en términos de tiempo lo posiciona como una opción viable en situaciones donde el tiempo es crítico, pero se requiere un número considerable de características para mantener la precisión. Sin embargo, sería interesante evaluar si se pueden optimizar aún más los parámetros del algoritmo para reducir el número de características sin sacrificar la precisión.
+
+5. <ins>**PCA:**</ins> Eficiencia y Robustez: PCA emerge como la técnica más equilibrada, logrando reducir significativamente el número de características a 9, lo que es notablemente menor en comparación con las demás técnicas. Esto, sumado a tiempos de entrenamiento aceptables (1.7793 segundos) y métricas que superan el umbral del 80%, lo convierte en una opción sólida para entornos de desarrollo donde la eficiencia es una prioridad. No obstante, sería prudente validar este enfoque en un ambiente de pruebas más riguroso, sobre todo en tareas que requieran procesamiento de grandes volúmenes de datos o en aplicaciones en tiempo real.
+
+6. <ins>**Selección de Modelos:**</ins> Si bien RFE proporciona las mejores métricas, el análisis sugiere que PCA y SelectKBest son los métodos más adecuados para llevar a producción por su equilibrio entre rendimiento y eficiencia. Se recomienda realizar pruebas adicionales en un entorno de desarrollo, considerando la carga de datos en tiempo real, para determinar la técnica más adecuada dependiendo de los requisitos específicos del sistema.
+
+7. <ins>**Escalabilidad y Rendimiento en Producción:**</ins> Además de los resultados presentados, es fundamental realizar una evaluación del rendimiento de cada técnica en entornos de producción, especialmente considerando datasets más grandes y la posibilidad de ejecutar el modelo en servidores con recursos limitados.
+
+8. <ins>**Aplicabilidad en Tiempo Real:**</ins> Las técnicas como RFE, aunque muestran excelentes métricas, deben someterse a pruebas adicionales para evaluar su aplicabilidad en aplicaciones en tiempo real, donde el tiempo de respuesta es crítico.
+
+9. <ins>**Impacto de la Reducción de Características en el Modelo:**</ins> La reducción de características a través de PCA y SelectKBest es prometedora no solo por la mejora en tiempos de entrenamiento, sino también porque simplifica el modelo, lo que podría mejorar la interpretabilidad sin comprometer demasiado la precisión.
+
 ## 5. APLICACIÓN DE HIPERPARÁMETROS
 
 Solo se aplicó a las dos técnicas que observamos que tuvieron mejores resultados, las cuales fueron SELECTKBEST y PCA
@@ -105,7 +125,7 @@ Solo se aplicó a las dos técnicas que observamos que tuvieron mejores resultad
 
 ![image](https://github.com/user-attachments/assets/ef6986ae-861d-4e91-bd84-fc493eea197f)
 
-## 6. CONCLUSIONES
+### 5.1. CONCLUSIONES
 
 1. <INS>**Alto Sobreajuste:**</INS> Ambos modelos, SelectKBest y PCA, presentan altos valores en las métricas de entrenamiento, mientras que en las métricas de prueba se observa una notable diferencia. Esto indica una posible tendencia al sobreajuste, donde los modelos están aprendiendo de manera más efectiva solo de los datos de entrenamiento, pero no se desempeñan bien con datos nuevos.
 
