@@ -25,6 +25,13 @@ Una empresa de telecomunicaciones desea mejorar la retención de sus clientes, i
 
 ![image](https://github.com/user-attachments/assets/b29fbbf7-d713-467f-9457-c04c6871d0a7)
 
+* Luego de resolver el tema de los valores nulos, tuvimos que tratar el tema de los valores atípicos, que estuvieron presentes en algunas variables. Para esto se uso el análisis de percentiles en nuestra tabla descriptiva estadística.
+
+![image](https://github.com/user-attachments/assets/93305de8-fe9e-44b1-b13d-185b2d015000)
+![image](https://github.com/user-attachments/assets/905ecc59-2302-4470-92c1-8ed7c533142c)
+
+
+
 
 
 
